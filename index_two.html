@@ -1,0 +1,23 @@
+
+<html>
+<head>
+	<title>D3 Example Two</title>
+	<meta charset = "utf-8">
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	
+</head>
+<body>
+	<script>
+		//Selecting the body tag in the element
+		d3.selectAll("body")
+			//Adding the style element to body
+			.style("background-color", "black")
+			//Add a p tag
+			.append("p")
+			//Now that we have appended a tag p to the body. All further chains will apply to the p tag
+				.style("color", "white")
+				.html("Rad !")
+				.style("background-color", "red")	
+	</script>
+</body>
+</html>
