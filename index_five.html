@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- In this example we will show how a data element binding can be established with a tag using D3.js-->
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<title>Fifth D3 Example</title>
+</head>
+<body>
+	<center>
+		<p>Cupertino, California</p>
+		<p>San Jose, California</p>
+		<p>Sunnyvale, California</p>
+		<p>Santa Clara, California</p>
+	</center>	
+	<script>
+	d3.selectAll("p")
+		//We establish the binding of the array to the selected data elements p
+		.data([4,8,15,16,23,42])
+		//When the function gets called the first time, the first data element
+		//is passed to it in place of d. 
+		//For the first time 4 is passed
+		//The next time, 8 is passed
+		//The next time , 15 is passed
+		.style("font-size", function(d){
+			return d * 4 + 'px';
+		});
+	</script>
+</body>
+</html>
