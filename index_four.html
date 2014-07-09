@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- In this example, we will select all the P tags and write a function which will change their text color to alternate shades of grey for even 
+	and odd node 
+	-->
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<title>Third D3 Example</title>
+</head>
+<body>
+	<p>Cupertino, California</p>
+	<p>San Jose, California</p>
+	<p>Sunnyvale, California</p>
+	<p>Santa Clara, California</p>
+	<script>
+		d3.selectAll("p")
+			//The first paramter is d. This means that basically the first selected element will be passed the first time to the function call. The second element is the iterator number.
+			.style("color", function(d, i){
+				return i % 2 ? "#111" : "#eee";
+			});
+	</script>
+</body>
+</html>
