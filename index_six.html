@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<!--
+		In this example , we will illustrate D3's enter and exit selections
+		You can create new nodes for incoming data by using enter() and remove outgoing nodes which are no longer needed using exit.
+		-->
+		<script src = "http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<script>
+			//Select all p tag elements present in bodt tag
+			d3.select("body").selectAll("p")
+				//bind data to the p tag
+				.data([1,2,3,4,5,6,7])
+				//Now that we have already selected some p tags. 
+				//If after the binding there aren't enough p tags as the associated data, the enter thingy appends more p tags
+				.enter().append("p")
+					.html(function(d){return "I am number" + d + " !";});
+
+				//If there were no p tags in the body. The HTML would look like
+				//I am number 1!
+				//I am number 2!
+				//.
+				//.
+				//I am number 7!
+
+				</script>
+		<p>Rad !</p>
+	</body>
+</html>
