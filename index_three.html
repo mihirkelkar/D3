@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- In this example, we will select all the P tags and write a function which will change their text color to a random value-->
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<title>Third D3 Example</title>
+</head>
+<body>
+	<p>Cupertino, California</p>
+	<p>San Jose, California</p>
+	<p>Sunnyvale, California</p>
+	<p>Santa Clara, California</p>
+	<script>
+	d3.selectAll("p")
+		//The return type for the color thingy is now a function which returns 
+		//HSL values with a randomly generated number field for the color
+		.style("color", function() {
+			return "hsl(" + Math.random() * 360 + ",100%,50%)";
+		});
+	</script>
+</body>
+</html>
