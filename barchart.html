@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+	Tutorial on Making a bar Chart
+	Lets first define an empty div and give it a class name chart in the body
+-->
+<html>
+<head>
+	<title>Bar Chart</title>
+	<script src = "http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<style type="text/css">
+		.chart div{
+			background-color: #111111;
+			color: #ffffff;
+			border: solid;
+			border-size: 3px;
+		}
+	</style>
+</head
+<body>
+	<div class = "chart"></div>
+	<script >
+	//Select the chart container.
+	var data = [4,8,15,16,23,42];
+	d3.select(".chart")
+		//Initiate a data join by specifying an empty container to attach data to
+		.selectAll("div")
+		//Attach data
+		.data(data)
+		//Append as many divs as the data binding
+		.enter().append("div")
+			.style("width", function(d){ return d * 10 + "px";})
+			.text(function(d) {return d;});
+	</script>
+</body>
+</html>
