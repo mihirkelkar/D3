@@ -1,0 +1,23 @@
+<html>
+	<!-- We will now randomly change the cx and cy attribute of the 3 circles to give them a diffferent position everytime the given page is reloaded.
+
+	Remember that the position of a svg element is always relative to the top left
+	corner of the containing element-->
+	<head>
+		<title>Three Little Circles (2)</title>
+		<script src = "http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<svg>
+			<circle cx="40" cy="60" r="10"></circle>
+			<circle cx="80" cy="60" r="10"></circle>
+			<circle cx="120" cy="60" r="10"></circle>
+		</svg>
+		<script>
+			d3.selectAll("circle")
+				.style("fill", "steelblue")
+				.attr("cx", function() {return Math.random() * 800;})
+				.attr("cy", function() {return Math.random() * 500;});
+		</script>
+	</body>
+</html>
