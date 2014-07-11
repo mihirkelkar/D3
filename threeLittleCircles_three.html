@@ -1,0 +1,27 @@
+<html>
+	<!-- We will now link data to the three svg circles and change attributes with correspondece to the data.
+	Remember that the position of a svg element is always relative to the top left
+	corner of the containing element-->
+	<head>
+		<title>Three Little Circles (3)</title>
+		<script src = "http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<center>
+			<svg>
+			
+			</svg>
+		</center>	
+		<script>
+			d3.select("svg")
+				.selectAll("circle")
+				.data([10, 20, 30, 40])
+				.enter().append("circle")
+					.style("fill", "steelblue")
+					.attr("cy", 60)
+					.attr("cx", function(d, i){return i * 100 + 30;})
+					.attr("r", function(d) {return Math.sqrt(d * Math.random() * 100);});
+
+		</script>
+	</body>
+</html>		
