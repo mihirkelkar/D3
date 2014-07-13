@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Join Examples</title>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+	<svg>
+
+	</svg>
+	<script>
+		var data = [
+			{"x": 15.0, "y" : 10},
+			{"x": 30.0, "y" : 20},
+			{"x": 45.0, "y" : 30}
+		]
+		//Here we select the parent svg element, and attach data to it
+		var svg = d3.select("svg");
+		var circle = svg.selectAll("circle").data(data);
+		//Now, assume that there are already a few circle elements defined in the svg.
+		//Now if the number of data  is less than the defined elements, 
+		//we enter here and  remove a few elements
+		circle.exit().remove();
+		//Now, if the number of data elements is more, we add a few circle elements here
+		circle.enter().append("circle").attr("r", 10);
+		//If the numbner of data element and circle element is exactly the same
+		circle
+			.attr("cx", function(d){return d.x;})
+			.attr("cy", function(d){return d.y;})
+			.style("fill", "red");
+	</script>
+</body>
+</html>
